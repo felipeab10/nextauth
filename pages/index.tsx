@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { isAuthenticated, signIn } = useContext(AuthContext);
+  const { isAuthenticated, signIn, broadcastAuth } = useContext(AuthContext);
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -17,6 +17,7 @@ const Home: NextPage = () => {
       email,
       password
     }
+
     await signIn(data);
 
 
